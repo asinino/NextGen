@@ -7,5 +7,15 @@
     "tslint.json": "*",
     "nx.json": "*"
   },
-  "projects": {}
+  "projects": {
+    "fireauth": {
+      "tags": []
+    },
+    "app-test": {
+      "tags": []
+    },
+    "app-test-e2e": {
+      "tags": []
+    }
+  }
 }

@@ -10,7 +10,9 @@
     "typeRoots": ["node_modules/@types"],
     "lib": ["es2017", "dom"],
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@as/fireauth": ["libs/fireauth/src/index.ts"]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }

@@ -2,12 +2,172 @@
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
   "version": 1,
   "newProjectRoot": "",
-  "projects": {},
+  "projects": {
+    "fireauth": {
+      "root": "libs/fireauth",
+      "sourceRoot": "libs/fireauth/src",
+      "projectType": "library",
+      "prefix": "as",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "libs/fireauth/tsconfig.lib.json",
+            "project": "libs/fireauth/ng-package.json"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "libs/fireauth/src/test.ts",
+            "tsConfig": "libs/fireauth/tsconfig.spec.json",
+            "karmaConfig": "libs/fireauth/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/fireauth/tsconfig.lib.json",
+              "libs/fireauth/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "app-test": {
+      "root": "apps/app-test/",
+      "sourceRoot": "apps/app-test/src",
+      "projectType": "application",
+      "prefix": "as",
+      "schematics": {
+        "@schematics/angular:component": {
+          "styleext": "scss"
+        }
+      },
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/apps/app-test",
+            "index": "apps/app-test/src/index.html",
+            "main": "apps/app-test/src/main.ts",
+            "polyfills": "apps/app-test/src/polyfills.ts",
+            "tsConfig": "apps/app-test/tsconfig.app.json",
+            "assets": [
+              "apps/app-test/src/favicon.ico",
+              "apps/app-test/src/assets"
+            ],
+            "styles": [
+              "apps/app-test/src/styles.scss"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "apps/app-test/src/environments/environment.ts",
+                  "with": "apps/app-test/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "app-test:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "app-test:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "app-test:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "apps/app-test/src/test.ts",
+            "polyfills": "apps/app-test/src/polyfills.ts",
+            "tsConfig": "apps/app-test/tsconfig.spec.json",
+            "karmaConfig": "apps/app-test/karma.conf.js",
+            "styles": [
+              "apps/app-test/src/styles.scss"
+            ],
+            "scripts": [],
+            "assets": [
+              "apps/app-test/src/favicon.ico",
+              "apps/app-test/src/assets"
+            ]
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "apps/app-test/tsconfig.app.json",
+              "apps/app-test/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "app-test-e2e": {
+      "root": "apps/app-test-e2e/",
+      "projectType": "application",
+      "architect": {
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "apps/app-test-e2e/protractor.conf.js",
+            "devServerTarget": "app-test:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "app-test:serve:production"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": "apps/app-test-e2e/tsconfig.e2e.json",
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    }
+  },
   "cli": {
     "warnings": {
       "typescriptMismatch": false,
       "versionMismatch": false
     },
     "defaultCollection": "@nrwl/schematics"
-  }
+  },
+  "defaultProject": "fireauth"
 }
