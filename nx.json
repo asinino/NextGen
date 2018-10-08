@@ -1,5 +1,5 @@
 {
-  "npmScope": "HomeM4n",
+  "npmScope": "@as",
   "implicitDependencies": {
     "angular.json": "*",
     "package.json": "*",
