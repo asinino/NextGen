@@ -3,6 +3,21 @@
   "version": "0.0.0",
   "license": "MIT",
   "private": true,
+  "scripts": {
+    "format": "./node_modules/.bin/nx format:write",
+    "format:write": "./node_modules/.bin/nx format:write",
+    "format:check": "./node_modules/.bin/nx format:check",
+    "help": "./node_modules/.bin/nx help",
+    "dep-graph": "./node_modules/.bin/nx dep-graph",
+    "affected:dep-graph": "./node_modules/.bin/nx affected:dep-graph",
+    "affected:test": "./node_modules/.bin/nx affected:test",
+    "affected:apps": "./node_modules/.bin/nx affected:apps",
+    "affected:build": "./node_modules/.bin/nx affected:build",
+    "affected:e2e": "./node_modules/.bin/nx affected:e2e",
+    "affected:lint": "./node_modules/.bin/nx affected:lint",
+    "lint": "./node_modules/.bin/nx lint && ng lint",
+    "e2e": "ng e2e"
+  },
   "dependencies": {
     "@angular/animations": "^6.1.0",
     "@angular/cdk": "^6.4.7",
