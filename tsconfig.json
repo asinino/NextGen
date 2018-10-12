@@ -11,7 +11,7 @@
     "lib": ["es2017", "dom"],
     "baseUrl": ".",
     "paths": {
-      "@as/fireauth": ["libs/fireauth/src/index.ts"]
+      "@nextgen/firebase": ["libs/firebase/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

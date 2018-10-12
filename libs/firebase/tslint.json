@@ -4,13 +4,13 @@
     "directive-selector": [
       true,
       "attribute",
-      "as",
+      "nextgen",
       "camelCase"
     ],
     "component-selector": [
       true,
       "element",
-      "as",
+      "nextgen",
       "kebab-case"
     ]
   }

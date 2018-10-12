@@ -1,5 +1,5 @@
 {
-  "npmScope": "@as",
+  "npmScope": "nextgen",
   "implicitDependencies": {
     "angular.json": "*",
     "package.json": "*",
@@ -16,6 +16,11 @@
     },
     "app-test-e2e": {
       "tags": []
+    },
+    "firebase": {
+      "tags": [
+        "firebase"
+      ]
     }
   }
 }

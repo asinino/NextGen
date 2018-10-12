@@ -1,14 +1,15 @@
 import { async, TestBed } from '@angular/core/testing';
-import { FireauthModule } from './fireauth.module';
 
-describe('FireauthModule', () => {
+import { FirebaseModule } from './firebase.module';
+
+describe('FirebaseModule', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [FireauthModule]
+      imports: [FirebaseModule]
     }).compileComponents();
   }));
 
   it('should create', () => {
-    expect(FireauthModule).toBeDefined();
+    expect(FirebaseModule).toBeDefined();
   });
 });
