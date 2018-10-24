@@ -3,7 +3,15 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  config: {
+    apiKey: 'AIzaSyBWQ__P5Saslus8nwxkwiu98tCHL8Uy49U',
+    authDomain: 'nexgen-feaaf.firebaseapp.com',
+    databaseURL: 'https://nexgen-feaaf.firebaseio.com',
+    projectId: 'nexgen-feaaf',
+    storageBucket: 'nexgen-feaaf.appspot.com',
+    messagingSenderId: '847878740997'
+  }
 };
 
 /*
